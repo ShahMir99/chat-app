@@ -13,6 +13,8 @@ export default function middleware(req: NextRequest) {
 
   const isLoggedIn = !!auth;
 
+  console.log("isLoggedIn", isLoggedIn)
+
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
   const isApiAuthRoute = nextUrl.pathname.startsWith(API_AUTH_PREFIX);
 
