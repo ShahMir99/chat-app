@@ -9,6 +9,16 @@ export const generateToken = (res, user) => {
     }
   );
 
+  // Locally
+  // res.cookie("token", token, {
+  //   httpOnly: true,
+  //   secure: Config.nodeEnv === "production",
+  //   sameSite: false,
+  //   maxAge: 7 * 24 * 60 * 60 * 1000,
+  // });
+
+
+  // PRODUCTION
   res.cookie("token", token, {
     httpOnly: true,
     secure: true,
@@ -16,5 +26,5 @@ export const generateToken = (res, user) => {
     domain: ".mmc-madina.com",  
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
-  
+
 };

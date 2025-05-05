@@ -24,10 +24,6 @@ app.use(helmet());
 app.use(
   cors({
     origin: function (origin, callback) {
-
-        console.log("origin", origin)
-        console.log("Config.clientUrls", Config.clientUrls)
-
       if (!origin || Config.clientUrls.includes(origin)) {
         callback(null, true);
       } else {

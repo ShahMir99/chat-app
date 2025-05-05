@@ -21,8 +21,8 @@ const CoversationList = () => {
 
   return (
     <aside
-      className={cn(
-        "fixed inset-y-0 lg:pb-0 pb-20 px-2 lg:left-16 lg:px-0 lg:w-[397px] lg:block overflow-y-auto border-r border-gray-200 "
+      className={cn("w-full fixed inset-y-0 lg:pb-0 pb-20 px-2 lg:left-16 lg:px-0 lg:w-[397px] lg:block overflow-y-auto border-r border-gray-200 ", 
+        conversationId && "hidden"
       )}
     >
         <div className="flex flex-col">

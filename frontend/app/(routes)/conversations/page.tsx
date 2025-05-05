@@ -5,7 +5,7 @@ import EmptyState from "@/components/empty-state";
 
 const ConversationPage = () => {
   return (
-    <div className="lg:pl-[460px] h-full lg:block">
+    <div className="hidden lg:pl-[460px] h-full lg:block">
       <EmptyState />
     </div>
   );

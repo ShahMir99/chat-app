@@ -48,19 +48,15 @@ export const initializeSocket = (server) => {
 
     socket.on("disconnect", async () => {
       if (userId) {
+
+        console.log(`A user Loggedout With This Id ${userId} and This Socket Id ${socket.id}`);
+
         const userData = await updateLastSeen(userId);
-        const idsToSendEvent = await getFriendsSocketIds(
-          userId,
-          userMappingWithId
-        );
-
+        const idsToSendEvent = await getFriendsSocketIds(userId, userMappingWithId);
         userMappingWithId.delete(userId);
-
         const onlineUsers = getOnlineUserIds(userMappingWithId);
 
-        io.to([...idsToSendEvent]).emit("conversation:updateLastSeen", {
-          userData,
-        });
+        io.to([...idsToSendEvent]).emit("conversation:updateLastSeen", {userData});
         io.emit("getOnlineUserList", { onlineUsers });
       }
     });
