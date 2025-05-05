@@ -12,7 +12,7 @@ let io;
 export const initializeSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: Config.clientUrl,
+      origin: Config.clientUrls,
       credentials: true,
     },
   });
