@@ -107,7 +107,13 @@ export const login = async (req, res) => {
 
 export const logOut = async (req, res) => {
   try {
-    res.clearCookie("token");
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: true,                  
+      sameSite: "none",              
+      domain: ".mmc-madina.com",    
+    });
+
     return SuccessResponse(res, 200, "User logout Successfully");
   } catch (error) {
     logger.error(error);
