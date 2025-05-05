@@ -12,8 +12,9 @@ export const generateToken = (res, user) => {
   res.cookie("token", token, {
     httpOnly: true,
     secure: true,
-    sameSite: "none",             // Required for cross-site cookies
+    sameSite: "none",
+    domain: ".mmc-madina.com",  
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
-
+  
 };
