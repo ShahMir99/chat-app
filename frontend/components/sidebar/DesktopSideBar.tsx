@@ -12,11 +12,11 @@ const DesktopSideBar = () => {
     <>
       <div
         className="
-          hidden
-          lg:fixed
-          lg:inset-y-0
-          lg:left-0
-          lg:w-[65px]
+          
+          fixed
+          inset-y-0
+          left-0
+          w-[65px]
           xl:px-6
           overflow-y-auto
         bg-[#f0f2f5]

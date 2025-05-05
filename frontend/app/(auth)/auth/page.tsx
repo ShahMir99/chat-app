@@ -15,7 +15,7 @@ export default function AuthPage() {
     justify-center
     "
     >
-      <div className="sm:mx-auto w-full max-w-md p-4">
+      <div className="sm:mx-auto w-full max-w-sm lg:max-w-md p-4">
         <Image
           src="/images/logo.png"
           alt=""
@@ -38,6 +38,7 @@ export default function AuthPage() {
         <div
           className="
         bg-white
+        pt-10
         p-5
         mt-5
         shadow-md

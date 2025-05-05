@@ -22,7 +22,7 @@ const FindPeopleList = () => {
   return (
     <aside
       className={cn(
-        "fixed inset-y-0 lg:pb-0 pb-20 px-2 lg:left-20 lg:px-0 lg:w-[340px] lg:block overflow-y-auto border-r border-gray-200 "
+        "w-full fixed inset-y-0 lg:pb-0 pb-20 px-2 left-16 lg:left-20 lg:px-0 lg:w-[340px] lg:block overflow-y-auto border-r border-gray-200 "
       )}
     >
       <div className="h-full pl-3 pr-2">
