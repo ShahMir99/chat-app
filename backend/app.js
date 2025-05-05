@@ -42,6 +42,10 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "100MB" }));
 
+app.get("/", (req, res) => {
+  res.status(200).json({message : "Hello World"})
+});
+
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/conversation", conversationRoute);
