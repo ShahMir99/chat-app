@@ -7,12 +7,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/Store";
 import { getFriendRequest, getPeople } from "@/store/slices/frineds/People";
 import FriendRequestBox from "./FriendRequestBox";
+import useConversation from "@/hooks/useConversation";
 
 const FindPeopleList = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { people, friendRequest } = useSelector(
     (state: RootState) => state.people
   );
+
+  const { conversationId } = useConversation();
 
   useEffect(() => {
     dispatch(getPeople());
@@ -22,7 +25,8 @@ const FindPeopleList = () => {
   return (
     <aside
       className={cn(
-        "w-full fixed inset-y-0 lg:pb-0 pb-20 px-2 left-16 lg:left-20 lg:px-0 lg:w-[340px] lg:block overflow-y-auto border-r border-gray-200 "
+        "w-full fixed inset-y-0 lg:pb-0 pb-20 px-2 left-16 lg:left-20 lg:px-0 lg:w-[340px] lg:block overflow-y-auto border-r border-gray-200 ",
+        conversationId && "hidden"
       )}
     >
       <div className="h-full pl-3 pr-2">
