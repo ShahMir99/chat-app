@@ -25,7 +25,7 @@ const FindPeopleList = () => {
   return (
     <aside
       className={cn(
-        "w-full fixed inset-y-0 lg:pb-0 pb-20 px-2 left-16 lg:left-20 lg:px-0 lg:w-[340px] lg:block overflow-y-auto border-r border-gray-200 ",
+        "w-[calc(100%-60px)] fixed inset-y-0 lg:pb-0 pb-20 px-2 left-16 lg:left-20 lg:px-0 lg:w-[340px] lg:block overflow-y-auto border-r border-gray-200 ",
         conversationId && "hidden"
       )}
     >
